@@ -5,12 +5,13 @@ import { Board } from './components/Board';
 function App() {
 
   const [board, setBoard] = useState(Array(9).fill(null));
+  const [xPlaying, setXPlaying] = useState(true);
   
 
   const handleBoxClick = (boxIdx) => {
     const updateBoard = board.map((value, idx) =>{
       if(idx === boxIdx){
-        return "X";
+        return xPlaying === true ? "X" : "O";
       }
       else{
         return value;
@@ -18,6 +19,7 @@ function App() {
     })
 
     setBoard(updateBoard);
+    setXPlaying(!xPlaying);
   }
   return (
     <div className="App">
