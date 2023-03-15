@@ -19,7 +19,6 @@ function App() {
     })
 
     setBoard(updateBoard);
-    setXPlaying(!xPlaying);
   }
   return (
     <div className="App">
